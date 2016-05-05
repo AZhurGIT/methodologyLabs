@@ -16,5 +16,7 @@ public:
 private: 
 	std::list<department>departments;
 
+
+
 };
 
