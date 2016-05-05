@@ -4,6 +4,7 @@
 
 HS::HS()
 {
+	name = "MTI";
 }
 
 
