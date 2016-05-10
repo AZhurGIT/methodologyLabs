@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="Credit.h" />
+    <ClInclude Include="monthPayment.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Credit.cpp" />
     <ClCompile Include="Lab3.cpp" />
+    <ClCompile Include="monthPayment.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
