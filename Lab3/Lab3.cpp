@@ -9,6 +9,7 @@
 
 int main()
 {
+	differentialPayment dp;
 	bool repaymentType = true;
 	Credit* testCredit = new Credit(10000, 6, 15);
 	printf("Get credit: $10000, %d Months, %.2f%%\n",testCredit->getMonths(),testCredit->getRate());
