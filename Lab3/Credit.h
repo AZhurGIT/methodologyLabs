@@ -1,12 +1,14 @@
 #pragma once
+#include "monthPayment.h"
+
 class Credit
 {
 public:
 	Credit();
-	Credit(float Sum,unsigned int Months=36, float Rate=17);
+	Credit(float Sum,unsigned int Months=36, float Rate=17,bool Type=false);
 	virtual ~Credit();
 
-	float repayment(unsigned int Month, bool Type);
+	float repayment(unsigned int Month);
 	float repaymentDiff(unsigned int Month);
 	float repaymentAnn(unsigned int Month);
 	float getBalance(void) { return balance; }
@@ -22,5 +24,6 @@ private:
 	unsigned int allMonths;
 	float rate;
 	float monthRate;
+	monthPayment *mp;
 };
 
