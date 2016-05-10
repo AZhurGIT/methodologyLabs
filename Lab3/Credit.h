@@ -6,6 +6,7 @@ public:
 	Credit(float Sum,unsigned int Months=36, float Rate=17);
 	virtual ~Credit();
 
+	float repayment(unsigned int Month, bool Type);
 	float repaymentDiff(unsigned int Month);
 	float repaymentAnn(unsigned int Month);
 	float getBalance(void) { return balance; }

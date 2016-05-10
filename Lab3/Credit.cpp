@@ -20,6 +20,11 @@ Credit::~Credit()
 {
 }
 
+float Credit::repayment(unsigned int Month,bool Type)
+{
+	return Type ? repaymentDiff(Month) : repaymentAnn(Month);
+}
+
 float Credit::repaymentDiff(unsigned int Month)
 {
 	float payment = allSum / allMonths + allSum *(allMonths - Month + 1) * monthRate/allMonths;
