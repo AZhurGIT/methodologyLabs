@@ -9,7 +9,7 @@
 
 int main()
 {
-	Credit_new* testCredit = new Credit_new(10000);
+	Credit* testCredit = new Credit(10000);
 	printf("Get credit: $10000, 6 Months, 15%%\n");
 	for (int i = 1; i < 7; ++i)
 	{

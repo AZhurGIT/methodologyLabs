@@ -1,10 +1,10 @@
 #pragma once
-class Credit_new
+class Credit
 {
 public:
-	Credit_new();
-	Credit_new(float Sum);
-	virtual ~Credit_new();
+	Credit();
+	Credit(float Sum);
+	virtual ~Credit();
 
 	float repayment(unsigned int Month, unsigned int AllMonths, float Rate);
 private:
