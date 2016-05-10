@@ -9,8 +9,8 @@
 
 int main()
 {
-	Credit* testCredit = new Credit(10000);
-	printf("Get credit: $10000, 6 Months, 15%\n");
+	Credit_new* testCredit = new Credit_new(10000);
+	printf("Get credit: $10000, 6 Months, 15%%\n");
 	for (int i = 1; i < 7; ++i)
 	{
 		printf("Repayment %d: %.2f\n", i, testCredit->repayment(i, 6, 15));

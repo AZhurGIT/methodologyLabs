@@ -2,21 +2,21 @@
 #include "Credit.h"
 
 
-Credit::Credit()
+Credit_new::Credit_new()
 {
 
 }
 
-Credit::Credit(float Sum)
+Credit_new::Credit_new(float Sum)
 {
 	balance = allSum = Sum;
 }
 
-Credit::~Credit()
+Credit_new::~Credit_new()
 {
 }
 
-float Credit::repayment(unsigned int Month,unsigned int AllMonths, float Rate)
+float Credit_new::repayment(unsigned int Month,unsigned int AllMonths, float Rate)
 {
 	float monthRate = Rate / 12 * 0.01;
 	float payment = allSum / AllMonths + allSum *(AllMonths - Month + 1) * monthRate/AllMonths;
