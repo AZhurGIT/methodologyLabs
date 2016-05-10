@@ -13,8 +13,10 @@ int main()
 	printf("Get credit: $10000, %d Months, %.2f%%\n",testCredit->getMonths(),testCredit->getRate());
 	for (int i = 1; i < 7; ++i)
 	{
-		printf("Repayment %d: %.2f\n", i, testCredit->repayment(i));
+//		printf("Repayment diff %d: %.2f\n", i, testCredit->repaymentDiff(i));
+		printf("Repayment ann %d: %.2f\n", i, testCredit->repaymentAnn(i));
 	}
+	printf("Closing balance: %.2f\n", testCredit->getBalance());
 	printf("Press enter to exit\n");
 	getchar();
     return 0;
