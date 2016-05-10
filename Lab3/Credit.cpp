@@ -38,6 +38,7 @@ float Credit::repaymentAnn(unsigned int Month)
 {
 	float payment = allSum * monthRate/(1-1/pow(1 + monthRate,allMonths));
 	balance = balance - payment + balance * monthRate;
+	months = allMonths - Month;
 	return payment;
 }
 

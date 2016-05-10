@@ -4,7 +4,7 @@ class monthPayment
 public:
 	monthPayment();
 	virtual ~monthPayment();
-	virtual void repayment(unsigned int Month)=0;
+	virtual float repayment(unsigned int Month, unsigned int AllMonths, float AllSum, float Rate)=0;
 };
 
 class annuityPayment : public monthPayment
@@ -12,7 +12,11 @@ class annuityPayment : public monthPayment
 public:
 	annuityPayment();
 	virtual ~annuityPayment();
-	void repayment(unsigned int Month);
+
+
+	// Унаследовано через monthPayment
+	virtual float repayment(unsigned int Month, unsigned int AllMonths, float AllSum, float Rate) override;
+
 };
 
 class differentialPayment : public monthPayment
@@ -20,5 +24,7 @@ class differentialPayment : public monthPayment
 public:
 	differentialPayment();
 	virtual ~differentialPayment();
-	void repayment(unsigned int Month);
+
+	// Унаследовано через monthPayment
+	virtual float repayment(unsigned int Month, unsigned int AllMonths, float AllSum, float Rate) override;
 };

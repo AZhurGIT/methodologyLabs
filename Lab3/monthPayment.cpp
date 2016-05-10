@@ -19,8 +19,12 @@ annuityPayment::~annuityPayment()
 {
 }
 
-void annuityPayment::repayment(unsigned int Month)
+float annuityPayment::repayment(unsigned int Month, unsigned int AllMonths, float AllSum, float Rate)
 {
+	float monthRate =Rate / 12 * 0.01;
+	float payment = AllSum * monthRate / (1 - 1 / pow(1 + monthRate, AllMonths));
+
+	return payment;
 }
 
 
@@ -32,6 +36,10 @@ differentialPayment::~differentialPayment()
 {
 }
 
-void differentialPayment::repayment(unsigned int Month)
+float differentialPayment::repayment(unsigned int Month, unsigned int AllMonths, float AllSum, float Rate)
 {
+	float monthRate = Rate / 12 * 0.01;
+	float payment = AllSum / AllMonths + AllSum *(AllMonths - Month + 1) * monthRate / AllMonths;
+
+	return payment;
 }
