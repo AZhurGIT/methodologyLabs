@@ -110,7 +110,22 @@ namespace Lab5
 			Assert::IsFalse(testPatronymic.compare(TestClient->getPatronymic()));
 			delete TestClient;
 		};
-		
+
+		[TestMethod]
+		void TestClientFullName()
+		{
+			std::string testName = "Имя";
+			std::string testPatronymic = "Отчество";
+			std::string testSurname = "Фамилия";
+			std::string testFullName = "Имя Отчество Фамилия";
+			Client* TestClient = new Client();
+			TestClient->setName(testName);
+			TestClient->setPatronymic(testPatronymic);
+			TestClient->setSurname(testSurname);
+			Assert::IsFalse(testFullName.compare(TestClient->getFullName()));
+			delete TestClient;
+		};
+
 
 	};
 }
