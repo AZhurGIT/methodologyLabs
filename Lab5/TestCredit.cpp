@@ -1,7 +1,10 @@
 ﻿#include "stdafx.h"
 
+
+
 #include "monthPayment.h"
 #include "Credit.h"
+#include "Client.h"
 
 using namespace System;
 using namespace System::Text;
@@ -63,7 +66,9 @@ namespace Lab5
 			{
 				Assert::IsTrue(fabs(TestAnnuityPayment->repayment(i, 6, 10000, 15) - 1740.3381) < 0.01);
 			}
+			delete TestAnnuityPayment;
 		};
+
 		[TestMethod]
 		void TestDifferentialPaymentRepaiment()
 		{
@@ -71,8 +76,41 @@ namespace Lab5
 			float payments[6] = { 1791.67,1770.83,1750.0,1729.17,1708.33,1687.5 };
 			for (int i = 1; i < 7; ++i)
 			{
-				Assert::IsTrue(fabs(TestDifferentialPayment->repayment(i, 6, 10000, 15) - payments[i-1]) < 0.01);
+				Assert::IsTrue(fabs(TestDifferentialPayment->repayment(i, 6, 10000, 15) - payments[i - 1]) < 0.01);
 			}
+			delete TestDifferentialPayment;
 		};
+
+		[TestMethod]
+		void TestClientName()
+		{
+			std::string testName = "Имя";
+			Client* TestClient = new Client();
+			TestClient->setName(testName);
+			Assert::IsFalse(testName.compare(TestClient->getName()));
+			delete TestClient;
+		};
+
+		[TestMethod]
+		void TestClientSurname()
+		{
+			std::string testSurname = "Фамилия";
+			Client* TestClient = new Client();
+			TestClient->setSurname(testSurname);
+			Assert::IsFalse(testSurname.compare(TestClient->getSurname()));
+			delete TestClient;
+
+		};
+		[TestMethod]
+		void TestClientPatronymic()
+		{
+			std::string testPatronymic = "Отчество";
+			Client* TestClient = new Client();
+			TestClient->setPatronymic(testPatronymic);
+			Assert::IsFalse(testPatronymic.compare(TestClient->getPatronymic()));
+			delete TestClient;
+		};
+		
+
 	};
 }

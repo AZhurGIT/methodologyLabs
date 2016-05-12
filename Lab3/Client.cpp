@@ -10,3 +10,8 @@ Client::Client()
 Client::~Client()
 {
 }
+
+std::string Client::getFullName(void)
+{
+	return name + " " + patronymic + " " + surname;
+}
